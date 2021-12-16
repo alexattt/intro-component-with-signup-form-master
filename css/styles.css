@@ -97,7 +97,7 @@ body {
 @media screen and (min-width: 1000px) {
   .main-container {
     position: absolute;
-    top: 25%;
+    top: 20%;
     padding: 0px 200px 0px 150px;
   }
 }
@@ -174,7 +174,7 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  height: 45vh;
+  height: auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -290,25 +290,22 @@ body {
   cursor: pointer;
 }
 
-.attribution {
-  position: relative;
-  text-align: center;
-  margin-bottom: 20px;
-  padding: 5px;
-}
-
-.attribution a {
-  color: #6055a5;
-  font-weight: 600;
+@media screen and (max-width: 1000px) {
+  .attribution {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 5px;
+  }
+  .attribution a {
+    color: #6055a5;
+    font-weight: 600;
+  }
 }
 
 @media screen and (min-width: 1000px) {
   .attribution {
-    position: absolute;
-    top: 95%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -95%);
-            transform: translate(-50%, -95%);
+    display: none;
   }
 }
 /*# sourceMappingURL=styles.css.map */
