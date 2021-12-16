@@ -258,6 +258,12 @@ body {
   left: 90%;
 }
 
+@media screen and (max-width: 1000px) {
+  .form-container .input-container .error-icon {
+    bottom: 36px;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .form-container .input-container .error-icon {
     left: 80%;

@@ -221,6 +221,10 @@ body {
       bottom: 40%;
       left: 90%;
 
+      @media screen and (max-width: 1000px) {
+        bottom: 36px;
+      }
+
       @media screen and (max-width: 450px) {
         left: 80%;
       }
