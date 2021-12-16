@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+$red: rgb(255, 122, 122);
+$green: rgb(56, 204, 140);
+$blue: rgb(96, 85, 165);
+$dark-blue: rgb(62, 60, 73);
+$grayish-blue: rgb(185, 182, 211);
+$font-size: 16px;
+$font-family: 'Poppins', sans-serif;
+
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.element-invisible {
+  display: none;
+}
+
+.element-visible {
+  display: flex;
+}
+  
+/***** some base definitions from https://piccalil.li/blog/a-modern-css-reset/ *****/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: $font-family;
+  cursor: pointer;
+}
+
+/***** main styles *****/
+
+html {
+  font-size: $font-size;
+  font-weight: 400;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $red;
+  color: white;
+
+  @media screen and (min-width: 375px) {
+    background-image: url('../images/bg-intro-desktop.png');
+  }
+
+  @media screen and (max-width: 375px) {
+    background-image: url('../images/bg-intro-mobile.png');
+  }
+}
+
+.main-container {
+  justify-content: center;
+
+  @media screen and (min-width: 1000px) {
+    position: absolute;
+    top: 25%;
+    padding: 0px 200px 0px 150px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    padding: 0px 100px 0px 50px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    padding: 50px 35px;
+  }
+}
+
+.title-container {
+  flex: 1;
+  align-self: center;
+  padding: 0px 50px;
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 45px;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 1000px) {
+      text-align: center;
+      padding: 0px;
+    }
+
+    @media screen and (max-width: 420px) {
+      font-size: 1.5rem;
+      line-height: 35px;
+    }
+  }
+
+  .desc {
+    @media screen and (max-width: 1000px) {
+      text-align: center;
+      padding: 0px;
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 420px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    text-align: center;
+    padding: 0px;
+  }
+}
+
+.main-form-container {
+  flex: 1;
+  height: 45vh;
+  justify-content: center;
+  border-radius: 10px;
+
+  .try-btn {
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 700;
+    background-color: $blue;
+    box-shadow: 0px 5px 1px 0px rgba(96, 85, 165, 0.3);
+    border-radius: 10px;
+    cursor: initial;
+
+    .accent {
+      opacity: 0.8;
+      font-weight: 400;
+    }
+  }
+}
+
+.form-container {
+  background-color: white;
+  border-radius: 7px;
+  padding: 30px;
+  justify-content: center;
+  gap: 15px;
+  box-shadow: 0px 6px 1px 1px rgba(0, 0, 0, 0.1);
+
+  .thanks-msg {
+    color: $green;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  .terms-services {
+    font-size: 0.75rem;
+    color: $grayish-blue;
+    text-align: center;
+  }
+
+  .input-container {
+
+    input {
+      height: 50px;
+      width: 100%;
+      border-radius: 5px;
+      padding-left: 20px;
+      border: 1px solid rgba(185, 182, 211, 0.5);
+      outline: none;
+      font-weight: 600;
+      opacity: 0.9;
+
+      &:focus {
+        border: 1px solid $blue;
+      }
+    }
+    
+    .input-warning {
+      border: 2px solid $red;
+    }
+
+    .error-msg {
+      color: $red;
+      font-weight: 600;
+      font-size: 0.8rem;
+      float: right;
+      font-style: italic;
+      position: relative;
+      bottom: 15%;
+    }
+
+    .error-icon {
+      position: relative;
+      bottom: 40%;
+      left: 90%;
+
+      @media screen and (max-width: 450px) {
+        left: 80%;
+      }
+    }
+  }
+
+  .free-trial-btn {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background-color: $green;
+    box-shadow: 0px 2px 1px 1px rgb(69, 153, 117);
+    border-radius: 3px;
+    transition: background-color 0.1s ease-in-out;
+
+    &:hover {
+      background-color: rgb(101, 221, 169);
+    }
+  }
+
+  .terms-services {
+    font-size: 0.7rem;
+
+    .ts-accent {
+      font-weight: 700;
+      color: $red;
+      cursor: pointer;
+    }
+  }
+}
+
+.attribution {
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 5px;
+
+  a {
+    color: $blue;
+    font-weight: 600;
+  }
+
+  @media screen and (min-width: 1000px) {
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -95%);
+  }
+}
